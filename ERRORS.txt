@@ -1,0 +1,24 @@
+PROJECT 6 - PRODUCT REVIEW ANALYZER - ERROR LOG
+==============================================
+Date: 2026-04-03
+
+ISSUE 1: Form Data Parsing
+--------------------------
+Error: 422 Unprocessable Entity when using curl with -d flag
+Root Cause: FastAPI Form() expects Content-Type: application/x-www-form-urlencoded
+Solution: Use python requests library with data={} parameter instead of curl
+
+ISSUE 2: Mistral Model Timeout
+-------------------------------
+Error: Request to Ollama localhost:11434 hangs/takes 60+ seconds
+Root Cause: mistral model response time is very slow on this hardware
+Status: Server starts correctly on port 8006, API endpoint works but LLM response times out
+
+VERIFICATION:
+- Server starts: YES (uvicorn on port 8006)
+- Endpoint responds: YES (returns 422 for wrong content-type, works with python requests)
+- LLM integration: SLOW (mistral model takes >60 seconds to respond)
+
+RECOMMENDATION:
+- Consider using llama2 instead of mistral for faster responses
+- Or increase timeout to 180+ seconds for production use
