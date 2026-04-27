@@ -2,6 +2,10 @@
 
 An AI-powered review intelligence dashboard that analyzes customer reviews for sentiment, topics, and key insights. Perfect for product managers, marketers, and customer experience teams.
 
+## Screenshot
+
+![ProductReviewDemo](ProductReviewDemo.png)
+
 ## Features
 
 - **Sentiment Classification**: Identifies positive, neutral, or negative sentiment
